@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Message Transfer</title>
+    <style>
+      body {
+        text-align: center;
+        background-color: aqua;
+      }
+      h1 {
+        color: #017;
+        font-family: sans-serif;
+      }
+      p {
+        color: #017;
+        font-family: sans-serif;
+      }
+      .warning {
+        color: red;
+        font-family: sans-serif;
+      }
+      textarea {
+        color: blue;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        background-color: #eef5;
+        border-style: dashed;
+        border-width: 2px;
+        border-color: #017;
+        border-radius: 5px;
+        width: 97%;
+        height: 400px;
+      }
+    </style>
+    <script>
+
+      let socket = new WebSocket("ws://192.168.1.100:81");
+
+      function sendData() {
+        socket.send(document.getElementById("DOC").value);
+      };
+
+      socket.onmessage = function(event) {
+        document.getElementById("DOC").value = event.data;
+      }
+
+      socket.onclose = function(event) {
+        if (event.wasClean) {
+          document.getElementById("error console").value = "Server connection is now closed.  Come back later and it may be open."
+        } else {
+          document.getElementById("error console").value = "There was an error in the server connection.  This problem should be fixed soon."
+        }
+      };
+
+      socket.onerror = function(error) {
+        document.getElementById("error console").value = `There was a strange error in the server connection: ${error.message}`;
+      };
+      
+    </script>
+  </head>
+  <body>
+    <noscript class="warning"><b><u>ERROR:</u></b> Javascript is not supported by your web browser.  This may be the result of an outdated web browser or Javascript being disabled in your settings.</noscript>
+    <h1>Local Network Message Transfer</h1>
+    <p>Editing the content below will automatically update it for everyone on this site.</p>
+    <p id="error console" class="warning" style="display: none"></p>
+    <textarea id="DOC" oninput="sendData()"></textarea>
+  </body>
+</html>
