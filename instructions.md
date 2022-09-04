@@ -42,7 +42,7 @@ Congratulations!  Your computer is now a server!
 
 To see if your server setup was sucessful, try going to Chrome or any other web browser and typing `localhost:80` into the URL bar.  You can also go there by clicking [this link](http://localhost:80).
 
-You should see a 404-file-not-found error.  This is because we haven't set up the page, yet.  If you see the 404 error, then your server works!  If not, please go to the [discussions page]() of this repository for help.
+You should see a 404-file-not-found error.  This is because we haven't set up the page, yet.  If you see the 404 error, then your server works!  If not, please go to the [discussions page](https://github.com/WesleyMcGinn/Localhost-Document/discussions/1) of this repository for help.
 
 ## Setting up the html page
 Download or copy `page.html` from this repository into your desktop.
@@ -97,4 +97,4 @@ To access the site from another device connected to the same wifi network, just 
 **Note:** You cannot access the localhost document if you are not connected to the same wifi network as the server.  If you want to be able to do that, you will have to purchase a URL domain and run a DNS server to redirect requests from any device to your local server.
 
 ## HELP
-If something doesn't turn out right, just let me know in the [discussions page]() of this repository.  I'd be glad to help.
+If something doesn't turn out right, just let me know in the [discussions page](https://github.com/WesleyMcGinn/Localhost-Document/discussions/1) of this repository.  I'd be glad to help.
