@@ -7,7 +7,7 @@ const clients = new Set();
 var DATA = '';
 
 http.createServer((req, res) => {
-  fs.readFile("C:/Users/admin/Desktop/test-server/page.html", function (err, data) {
+  fs.readFile("./Desktop/page.html", function (err, data) {
     if (err) {
       console.log("404: HTML file does not exist!");
       res.writeHead(404, {'Content-Type': 'text/html'});
