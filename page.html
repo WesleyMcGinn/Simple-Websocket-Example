@@ -39,11 +39,11 @@
 
       function sendData() {
         socket.send(document.getElementById("DOC").value);
-      };
+      }
 
       socket.onmessage = function(event) {
         document.getElementById("DOC").value = event.data;
-      }
+      };
 
       socket.onclose = function(event) {
         if (event.wasClean) {
