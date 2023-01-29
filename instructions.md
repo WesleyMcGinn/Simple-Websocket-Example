@@ -21,7 +21,7 @@ node -v
 
 If node.js is properly installed, you should see the version of node.js that you are using, which will be something like `v16.17.0`.
 
-Now, you will need to install websocket.  Don't worry!  This will be a lot easier than installing node.js.  Just type the following into the Command Prompt:
+Now, you will need to install websocket.  This will be a lot easier than installing node.js.  Just type the following into the Command Prompt:
 ```
 npm install ws
 ```
@@ -29,7 +29,7 @@ npm install ws
 Now you have all the installation and software that you need!
 
 ## Setting up the server
-Download or copy `server.js` from this repository into the folder `C:\Users\<your name>`.
+Download or copy `server.js` from this repository into the folder `C:\Users\<your_username>`, where "<your_username>" is replaced with the username you use to log into your device.
 
 To run the server, go to the Command Prompt and type the following:
 ```
@@ -40,12 +40,12 @@ Congratulations!  Your computer is now a server!
 
 **Note:** You can stop your computer from being a server at any time by going to the Command Prompt and using the keyboard shortcut `Ctrl + c`.  Your computer also stops being a server when you close the Command Prompt.
 
-To see if your server setup was sucessful, try going to Chrome or any other web browser and typing `localhost:80` into the URL bar.  You can also go there by clicking [this link](http://localhost:80).
+To see if your server setup was sucessful, go to Chrome or any other web browser on the serving device and type the word `localhost` directly into the URL bar.  You can also go there by clicking [this link](http://localhost:80).
 
 You should see a 404-file-not-found error.  This is because we haven't set up the page, yet.  If you see the 404 error, then your server works!  If not, please go to the [discussions page](https://github.com/WesleyMcGinn/Localhost-Document/discussions/1) of this repository for help.
 
 ## Setting up the html page
-Download or copy `page.html` from this repository into your desktop.
+Download or copy `page.html` from this repository into your desktop.  If you do not want to put this file in your desktop, you will have to change line 10 in `server.js` to match its new directory.  It is NOT recommended that you do this on your first try at getting a server working.
 
 Now, you will need to do some editing specific to your device.
 
@@ -73,7 +73,7 @@ Wireless LAN adapter Wi-Fi:
                                        192.168.1.254
 ```
 
-Your IPv4 address is in the line:
+Your IPv4 address will probably be in the third line from the bottom of this chunk:
 ```
    IPv4 Address. . . . . . . . . . . : 192.168.1.100
 ```
@@ -85,12 +85,12 @@ Use `Ctrl + s` to save the edited code.
 That's it!  Your locally hosted document is ready to go!
 
 ## Running the server
-Go back to the Command Prompt and type:
+If you closed the Command Prompt or pressed `Ctrl + c` to stop the server, go back to the Command Prompt and type:
 ```
 node server.js
 ```
 
-Your computer is now running as a server!  To test it, open Chrome or any other web browser and type `localhost:80` into the URL bar.  You can also go there by clicking [this link](http://localhost:80).  You should see an aqua-colored page with a large text area.
+Now, open Chrome or any other web browser and type `localhost` into the URL bar.  You can also go there by clicking [this link](http://localhost:80).  You should see an aqua-colored page with a large text area.
 
 To access the site from another device connected to the same wifi network, just type your IPv4 address into the url bar.
 
