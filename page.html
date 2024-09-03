@@ -33,9 +33,7 @@
     </style>
     <script>
       
-      let yourIP = "192.168.1.100";
-
-      let socket = new WebSocket("ws://" + yourIP + ":81");
+      let socket = new WebSocket("ws://" + location.host + "/connect");
 
       function sendData() {
         socket.send(document.getElementById("DOC").value);
@@ -51,13 +49,13 @@
           document.getElementById("error console").value = "Server connection is now closed.  Come back later and it may be open."
         } else {
           document.getElementById("error console").style.display = '';
-          document.getElementById("error console").value = "There was an error in the server connection.  This problem should be fixed soon."
+          document.getElementById("error console").value = "Uh oh!  There was an error in the server connection."
         }
       };
 
       socket.onerror = function(error) {
         document.getElementById("error console").style.display = '';
-        document.getElementById("error console").value = `There was a strange error in the server connection: ${error.message}`;
+        document.getElementById("error console").value = "There was a strange error in the server connection: " + error.message;
       };
       
     </script>
