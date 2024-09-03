@@ -1,16 +1,15 @@
 # Instructions for Localhost Document Setup
 
 ## You will need:
- - A computer (Preferably on windows software),
- - Access to the localhost document repository (the one you are in now),
- - The ability to download an app.
+ - Computer (This tutorial is written for windows software)
+ - Wifi (If you are viewing this you probably have it)
 
 ## Installing node.js and Websocket
 Node.js is a software that will allow you to easily host websites of all kinds using your computer as the server.  It is one of the best server softwares to use because it can handle multiple requests simultaneously.
 
-To install node.js, click either button on [this page](https://nodejs.org/).
+Download node.js from [this page](https://nodejs.org/).
 
-When the file finishes downloading, open it and follow through the instructions to install node.js on your computer.  Once node.js is finished installing, it is recommended that you restart your computer.
+When the file finishes downloading, open it and follow the instructions to install node.js on your computer.  Once node.js is finished installing, it is recommended that you restart your computer.
 
 After you have restarted your computer, open the Command Prompt.  If you are using a windows device, you can find the command prompt by typing "Command Prompt" into the search bar on the taskbar at the bottom of your screen.
 
@@ -19,17 +18,19 @@ In the Command prompt, type the following:
 node -v
 ```
 
-If node.js is properly installed, you should see the version of node.js that you are using, which will be something like `v16.17.0`.
+If node.js is properly installed, you should see the version of node.js that you are using, which will be something like `v22.5.1`.
 
 Now, you will need to install websocket.  This will be a lot easier than installing node.js.  Just type the following into the Command Prompt:
 ```
-npm install ws
+npm i ws
 ```
 
-Now you have all the installation and software that you need!
+Now you have all the software that you need!
 
 ## Setting up the server
 Download or copy `server.js` from this repository into the folder `C:\Users\<your_username>`, where "<your_username>" is replaced with the username you use to log into your device.
+
+Next, download or copy `page.html` from this repository into your desktop.  If you do not want to put this file in your desktop, you will have to change line 11 in `server.js` to match its new directory.
 
 To run the server, go to the Command Prompt and type the following:
 ```
@@ -42,16 +43,11 @@ Congratulations!  Your computer is now a server!
 
 To see if your server setup was sucessful, go to Chrome or any other web browser on the serving device and type the word `localhost` directly into the URL bar.  You can also go there by clicking [this link](http://localhost:80).
 
-You should see a 404-file-not-found error.  This is because we haven't set up the page, yet.  If you see the 404 error, then your server works!  If not, please go to the [discussions page](https://github.com/WesleyMcGinn/Localhost-Document/discussions/1) of this repository for help.
+If the page loads, congratulations!  Your server works!  If not, please go to the [discussions page](https://github.com/WesleyMcGinn/Localhost-Document/discussions/1) of this repository for help.
 
-## Setting up the html page
-Download or copy `page.html` from this repository into your desktop.  If you do not want to put this file in your desktop, you will have to change line 10 in `server.js` to match its new directory.  It is NOT recommended that you do this on your first try at getting a server working.
+## Access from another device
 
-Now, you will need to do some editing specific to your device.
-
-Open `page.html` with Visual Studio Code or some kind of code editor.  (Do not double click it because that will open it with a web browser, which will show what the code does rather than a place to edit the code.)
-
-In line 36 you will see: `let yourIP = "192.168.1.100";`.  You will need to change the number within the quotation marks to match your device's IPv4 address.
+To access your server from another device _connected to the same wifi network_, you can simply use the IPv4 address of your computer as a URL.
 
 To find out what your IPv4 address is, open the Command Prompt and type:
 ```
@@ -78,23 +74,20 @@ Your IPv4 address will probably be in the third line from the bottom of this chu
    IPv4 Address. . . . . . . . . . . : 192.168.1.100
 ```
 
-In the above example, `192.168.1.100` is the IPv4 address.  Your IPv4 will probably be different.  Copy it (or memorize it) and, finally, change line 36 in `page.html` so that your IPv4 address is in the quotation marks.
+In the above example, `192.168.1.100` is the IPv4 address.  Your IPv4 will probably be different.  Copy it (or memorize it), but take note that your IP address may change with certain events.  If you want to always have the same IP address, try looking into [setting up a static IP](https://www.pcmag.com/how-to/how-to-set-up-a-static-ip-address).
 
-Use `Ctrl + s` to save the edited code.
+On another device connected to the same wifi network as your server, type your IPv4 address into the URL bar of any web browser.  You should see the page load.
 
-That's it!  Your locally hosted document is ready to go!
+Now, anything you type in the text box on the page will update the text box for all devices with the page open.
 
 ## Running the server
-If you closed the Command Prompt or pressed `Ctrl + c` to stop the server, go back to the Command Prompt and type:
+
+If you closed the Command Prompt or pressed `Ctrl + c` to stop the server, you can start it up again by going back to the Command Prompt and typing:
 ```
 node server.js
 ```
 
-Now, open Chrome or any other web browser and type `localhost` into the URL bar.  You can also go there by clicking [this link](http://localhost:80).  You should see an aqua-colored page with a large text area.
-
-To access the site from another device connected to the same wifi network, just type your IPv4 address into the url bar.
-
-**Note:** You cannot access the localhost document if you are not connected to the same wifi network as the server.  If you want to be able to do that, you will have to purchase a URL domain and run a DNS server to redirect requests from any device to your local server.
+**Note:** You cannot access the localhost document if you are not connected to the same wifi network as the server.  If you want to be able to do that, please look into [Port Forwarding](https://www.wikihow.com/Set-Up-Port-Forwarding-on-a-Router).
 
 ## HELP
-If something doesn't turn out right, just let me know in the [discussions page](https://github.com/WesleyMcGinn/Localhost-Document/discussions/1) of this repository.  I'd be glad to help.
+If something doesn't turn out right, just let me know in the [discussions page](https://github.com/WesleyMcGinn/Localhost-Document/discussions/1) of this repository.  I'd be glad to help!
